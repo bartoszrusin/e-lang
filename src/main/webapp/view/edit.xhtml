@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>UserCRUD</title>
+</h:head>
+
+<h:body>
+
+    <h:form>
+
+        <h3>Edit user</h3>
+
+        <hr/>
+        
+        <h:messages style="color: red;"/>
+
+        <fieldset>
+            <h:panelGrid columns="2">
+                <ui:include src="include/userInput.xhtml">
+                    <ui:param name="user" value="#{userBean.selectedUser}"/>
+                </ui:include>
+
+                <h:commandButton value="Cancel" action="home" immediate="true"/>
+                <h:commandButton value="Save changes" action="#{userController.update()}"/>
+            </h:panelGrid>
+        </fieldset>
+    </h:form>
+</h:body>
+
+</html>

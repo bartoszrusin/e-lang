@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:outputText value="Name: "/>
+    <h:inputText value="#{user.name}" required="true" requiredMessage="Name is required" maxlength="200">
+        <f:validator validatorId="nameValidator"/>
+    </h:inputText>
+
+    <h:outputText value="Surname: "/>
+    <h:inputText value="#{user.surname}" required="true" requiredMessage="Surname is required" maxlength="200">
+        <f:validator validatorId="surnameValidator"/>
+    </h:inputText>
+
+    <h:outputText value="Phone number: "/>
+    <h:inputText value="#{user.phoneNumber}" required="true" requiredMessage="Phone number is required" maxlength="20">
+        <f:validator validatorId="phoneNumberValidator"/>
+    </h:inputText>
+
+
+    <h:outputText value="Address: "/>
+    <h:inputTextarea value="#{user.address}" cols="30" rows="3" required="true" requiredMessage="Address is required">
+        <f:validator validatorId="addressValidator"/>
+    </h:inputTextarea>
+
+</ui:composition>
